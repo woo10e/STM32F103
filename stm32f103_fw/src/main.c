@@ -17,6 +17,7 @@ int main(void)
   apInit();
 
   apMain();
+  /*test*/
 
   return 0;
 }
