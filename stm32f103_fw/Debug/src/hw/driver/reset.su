@@ -1,0 +1,2 @@
+../src/hw/driver/reset.c:14:6:resetInit	16	static
+../src/hw/driver/reset.c:32:10:resetGetCount	4	static

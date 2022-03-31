@@ -1,0 +1,32 @@
+/*
+ * reset.c
+ *
+ *  Created on: 2022. 3. 31.
+ *      Author: uylee
+ */
+
+
+#include "reset.h"
+
+bool resetInit(void)
+{
+	bool ret = true;
+
+
+	//만약 Reset 핀이 눌렸다면
+	if (RCC->CSR & (1<<26))
+	{
+	  rtcBackupRegWrite(0, rtcBackupRegRead(0) + 1);
+	  delay(500);
+	  reset_count = rtcBackupRegRead(0);
+	}
+
+	rtcBackupRegWrite(0, 0);
+
+	return ret;
+}
+
+uint32_t resetGetCount(void)
+{
+	return 0;
+}

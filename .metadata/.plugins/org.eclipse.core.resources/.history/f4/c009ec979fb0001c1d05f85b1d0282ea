@@ -1,0 +1,19 @@
+/*
+ * reset.h
+ *
+ *  Created on: 2022. 3. 31.
+ *      Author: uylee
+ */
+
+#ifndef SRC_COMMON_HW_INCLUDE_RESET_H_
+#define SRC_COMMON_HW_INCLUDE_RESET_H_
+
+#include "hw_def.h"
+
+#ifdef _USE_HW_RESET
+
+boot resetInit(void);
+
+#endif
+
+#endif /* SRC_COMMON_HW_INCLUDE_RESET_H_ */
