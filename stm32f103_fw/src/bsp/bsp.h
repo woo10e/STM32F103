@@ -11,6 +11,15 @@
 
 #include "def.h"
 
+#define _USE_LOG_PRINT   1  //로그프린트에프 키는 것은 1 끄는 것은 0
+
+#if _USE_LOG_PRINT
+#define logPrintf(fmt, ...) printf(fmt, ##__VA_ARGS__)
+#else
+#define logPrintf(fmt, ...)
+#endif
+
+
 #include "stm32f1xx_hal.h"
 
 

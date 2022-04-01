@@ -37,6 +37,7 @@ uint32_t rx_in  = 0;
 uint32_t rx_out = 0;
 uint32_t rx_len = 512;
 uint8_t  rx_buf[512];
+bool     rx_full = false;
 
 uint32_t cdcAvailable(void)
 {
@@ -110,6 +111,25 @@ uint32_t cdcGetBaud(void)
 }
 
 
+uint8_t USBD_CDC_SOF(struct _USBD_HandleTypeDef *pdev)
+{
+  if ( rx_full == true)
+  {
+    uint32_t buf_len;
+
+    //수신 버퍼에서 비어있는 데이터 양
+    buf_len = (rx_len - cdcAvailable()) - 1;
+
+    if (buf_len >= USB_FS_MAX_PACKET_SIZE)
+    {
+      //다음 데이터도 보내주세요 라고 컴퓨터에 알려준다.
+      USBD_CDC_ReceivePacket(pdev);
+      rx_full = false;
+    }
+  }
+
+  return 0;
+}
 
 
 
@@ -363,12 +383,29 @@ static int8_t CDC_Control_FS(uint8_t cmd, uint8_t* pbuf, uint16_t length)
 static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
 {
   /* USER CODE BEGIN 6 */
-  USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
-  USBD_CDC_ReceivePacket(&hUsbDeviceFS);
+
+
 
   for ( int i=0; i<*Len; i++)
   {
     cdcDataIn(Buf[i]);
+  }
+
+  uint32_t buf_len;
+
+  //수신 버퍼에서 비어있는 데이터 양
+  buf_len = (rx_len - cdcAvailable()) - 1;
+
+  if (buf_len >= USB_FS_MAX_PACKET_SIZE)
+  {
+    //다음 데이터도 보내주세요 라고 컴퓨터에 알려준다.
+    USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
+    USBD_CDC_ReceivePacket(&hUsbDeviceFS);
+  }
+  else
+  {
+    // 버퍼 용량이 부족하니 좀 기려라 컴튜터야.
+    rx_full = true;
   }
 
   return (USBD_OK);

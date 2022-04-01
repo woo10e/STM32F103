@@ -15,17 +15,9 @@ static bool is_open[UART_MAX_CH];
 
 static qbuffer_t qbuffer[UART_MAX_CH];
 static uint8_t rx_buf[256];
-static uint8_t rx_data[UART_MAX_CH];
-
-/*cdc.h 로 이동되며 cdc.c driver 생성.
-extern uint32_t cdcAvailable(void);
-extern uint32_t cdcRead(void);
-extern void cdcDataIn(uint8_t rx_data);
-extern uint32_t cdcWrite(uint8_t *p_data, uint32_t length);
-extern uint32_t cdcGetBaud(void);
-*/
 
 UART_HandleTypeDef huart1;
+DMA_HandleTypeDef  hdma_usart1_rx;
 
 bool uartInit(void)
 {
@@ -50,7 +42,7 @@ bool uartOpen(uint8_t ch, uint32_t baud)
 
     case _DEF_UART2:
       huart1.Instance            = USART1;
-      huart1.Init.BaudRate       = 115200;
+      huart1.Init.BaudRate       = baud;
       huart1.Init.WordLength     = UART_WORDLENGTH_8B;
       huart1.Init.StopBits       = UART_STOPBITS_1;
       huart1.Init.Parity         = UART_PARITY_NONE;
@@ -58,9 +50,13 @@ bool uartOpen(uint8_t ch, uint32_t baud)
       huart1.Init.HwFlowCtl      = UART_HWCONTROL_NONE;
       huart1.Init.OverSampling   = UART_OVERSAMPLING_16;
 
-      qbufferCreate(&qbuffer[_DEF_UART2], &rx_buf[0], 256);
+      HAL_UART_DeInit(&huart1);
 
+      qbufferCreate(&qbuffer[ch], &rx_buf[0], 256);
 
+      __HAL_RCC_DMA1_CLK_ENABLE();
+      HAL_NVIC_SetPriority(DMA1_Channel5_IRQn, 0, 0);
+      HAL_NVIC_EnableIRQ(DMA1_Channel5_IRQn);
 
       if (HAL_UART_Init(&huart1) != HAL_OK)
       {
@@ -72,11 +68,14 @@ bool uartOpen(uint8_t ch, uint32_t baud)
         ret = true;
         is_open[ch] = true;
 
-        if(HAL_UART_Receive_IT(&huart1, (uint8_t *)&rx_data[_DEF_UART2], 1) != HAL_OK)
+        if(HAL_UART_Receive_DMA(&huart1, (uint8_t *)&rx_buf[0], 256) != HAL_OK)
         {
           //Error_Handler();
           ret = false;
         }
+
+        qbuffer[ch].in = (qbuffer[ch].len - hdma_usart1_rx.Instance->CNDTR);
+        qbuffer[ch].out = qbuffer[ch].in;
       }
 
       break;
@@ -96,7 +95,8 @@ uint32_t uartAvailable(uint8_t ch)
       break;
 
     case _DEF_UART2:
-      ret = qbufferAvailable(&qbuffer[_DEF_UART2]);
+      qbuffer[ch].in = (qbuffer[ch].len - hdma_usart1_rx.Instance->CNDTR);
+      ret = qbufferAvailable(&qbuffer[ch]);
       break;
   }
 
@@ -169,7 +169,13 @@ uint32_t uartGetBaud(uint8_t ch)
   switch(ch)
   {
     case _DEF_UART1:
+
       ret = cdcGetBaud();
+      break;
+
+    case _DEF_UART2:
+
+      ret = huart1.Init.BaudRate;
       break;
   }
 
@@ -187,15 +193,15 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
+#if 0
   if (huart->Instance == USART1)
   {
     qbufferWrite(&qbuffer[_DEF_UART2], &rx_data[_DEF_UART2], 1);
 
     HAL_UART_Receive_IT(&huart1, (uint8_t *)&rx_data[_DEF_UART2], 1);
   }
+#endif
 }
-
-
 
 void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
 {
@@ -224,6 +230,23 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
+    /* USART1 DMA Init */
+    /* USART1_RX Init */
+    hdma_usart1_rx.Instance = DMA1_Channel5;
+    hdma_usart1_rx.Init.Direction = DMA_PERIPH_TO_MEMORY;
+    hdma_usart1_rx.Init.PeriphInc = DMA_PINC_DISABLE;
+    hdma_usart1_rx.Init.MemInc = DMA_MINC_ENABLE;
+    hdma_usart1_rx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
+    hdma_usart1_rx.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
+    hdma_usart1_rx.Init.Mode = DMA_CIRCULAR;
+    hdma_usart1_rx.Init.Priority = DMA_PRIORITY_LOW;
+    if (HAL_DMA_Init(&hdma_usart1_rx) != HAL_OK)
+    {
+      Error_Handler();
+    }
+
+    __HAL_LINKDMA(uartHandle,hdmarx,hdma_usart1_rx);
+
     /* USART1 interrupt Init */
     HAL_NVIC_SetPriority(USART1_IRQn, 0, 0);
     HAL_NVIC_EnableIRQ(USART1_IRQn);
@@ -250,6 +273,9 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
     */
     HAL_GPIO_DeInit(GPIOA, GPIO_PIN_9|GPIO_PIN_10);
 
+    /* USART1 DMA DeInit */
+    HAL_DMA_DeInit(uartHandle->hdmarx);
+
     /* USART1 interrupt Deinit */
     HAL_NVIC_DisableIRQ(USART1_IRQn);
   /* USER CODE BEGIN USART1_MspDeInit 1 */
@@ -257,4 +283,3 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
   /* USER CODE END USART1_MspDeInit 1 */
   }
 }
-
