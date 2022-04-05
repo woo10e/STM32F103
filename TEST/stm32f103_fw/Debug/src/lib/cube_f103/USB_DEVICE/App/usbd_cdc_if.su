@@ -1,0 +1,11 @@
+../src/lib/cube_f103/USB_DEVICE/App/usbd_cdc_if.c:276:15:CDC_DeInit_FS	0	static
+../src/lib/cube_f103/USB_DEVICE/App/usbd_cdc_if.c:290:15:CDC_Control_FS	0	static
+../src/lib/cube_f103/USB_DEVICE/App/usbd_cdc_if.c:262:15:CDC_Init_FS	8	static
+../src/lib/cube_f103/USB_DEVICE/App/usbd_cdc_if.c:44:10:cdcAvailable	0	static
+../src/lib/cube_f103/USB_DEVICE/App/usbd_cdc_if.c:53:9:cdcRead	8	static
+../src/lib/cube_f103/USB_DEVICE/App/usbd_cdc_if.c:67:6:cdcDataIn	0	static
+../src/lib/cube_f103/USB_DEVICE/App/usbd_cdc_if.c:383:15:CDC_Receive_FS	16	static
+../src/lib/cube_f103/USB_DEVICE/App/usbd_cdc_if.c:109:10:cdcGetBaud	0	static
+../src/lib/cube_f103/USB_DEVICE/App/usbd_cdc_if.c:116:9:USBD_CDC_SOF	16	static
+../src/lib/cube_f103/USB_DEVICE/App/usbd_cdc_if.c:424:9:CDC_Transmit_FS	8	static
+../src/lib/cube_f103/USB_DEVICE/App/usbd_cdc_if.c:81:10:cdcWrite	24	static

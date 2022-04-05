@@ -132,3 +132,133 @@ org.eclipse.core.internal.resources.ResourceException: Marker id 196 not found.
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 !SUBENTRY 1 org.eclipse.core.resources 4 376 2022-04-01 18:11:38.710
 !MESSAGE Marker id 196 not found.
+!SESSION 2022-04-04 10:01:35.909 -----------------------------------------------
+eclipse.buildId=Version 1.9.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-04-04 10:01:59.919
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-04-04 10:02:00.142
+!MESSAGE Log4j initialized with config file D:\00_STM32\STM32F103\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-04-04 10:02:17.651
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2022-04-04 11:30:38.819 -----------------------------------------------
+eclipse.buildId=Version 1.9.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-04-04 11:31:16.042
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-04-04 11:31:16.123
+!MESSAGE Log4j initialized with config file D:\00_STM32\STM32F103\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-04-04 11:31:24.219
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-04 11:42:14.541
+!MESSAGE Indexed 'stm32f103_boot' (44 sources, 132 headers) in 4.72 sec: 9,586 declarations; 38,369 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0.39%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-04 11:51:54.755
+!MESSAGE Indexed 'stm32f103_fw' (44 sources, 132 headers) in 2.64 sec: 9,586 declarations; 38,378 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0.39%)
+
+!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2022-04-04 12:19:07.567
+!MESSAGE CDT Build Error
+!STACK 1
+org.eclipse.core.runtime.CoreException: CDT Build Error
+	at org.eclipse.cdt.managedbuilder.internal.core.GeneratedMakefileBuilder.invokeInternalBuilderForOneProject(GeneratedMakefileBuilder.java:1531)
+	at org.eclipse.cdt.managedbuilder.internal.core.GeneratedMakefileBuilder.invokeInternalBuilder(GeneratedMakefileBuilder.java:1428)
+	at org.eclipse.cdt.managedbuilder.internal.ui.commands.BuildFilesHandler$BuildFilesJob.run(BuildFilesHandler.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.NullPointerException
+	at org.eclipse.cdt.managedbuilder.internal.core.GeneratedMakefileBuilder.invokeInternalBuilderForOneProject(GeneratedMakefileBuilder.java:1487)
+	... 3 more
+!SUBENTRY 1 org.eclipse.cdt.managedbuilder.core 4 0 2022-04-04 12:19:07.568
+!MESSAGE CDT Build Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.managedbuilder.internal.core.GeneratedMakefileBuilder.invokeInternalBuilderForOneProject(GeneratedMakefileBuilder.java:1487)
+	at org.eclipse.cdt.managedbuilder.internal.core.GeneratedMakefileBuilder.invokeInternalBuilder(GeneratedMakefileBuilder.java:1428)
+	at org.eclipse.cdt.managedbuilder.internal.ui.commands.BuildFilesHandler$BuildFilesJob.run(BuildFilesHandler.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-04 12:28:39.169
+!MESSAGE Indexed 'stm32f103_boot' (43 sources, 131 headers) in 2.36 sec: 9,137 declarations; 34,543 references; 3 unresolved inclusions; 36 syntax errors; 189 unresolved names (0.43%)
+!SESSION 2022-04-04 15:17:49.396 -----------------------------------------------
+eclipse.buildId=Version 1.9.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-04-04 15:17:58.235
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-04-04 15:17:58.299
+!MESSAGE Log4j initialized with config file D:\00_STM32\STM32F103\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-04-04 15:18:04.683
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-04 15:18:46.727
+!MESSAGE Indexed 'stm32f103_fw_Test' (44 sources, 132 headers) in 5.64 sec: 9,415 declarations; 37,100 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0.4%)
+
+!ENTRY org.eclipse.core.resources 4 77 2022-04-04 15:22:17.658
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2022-04-04 15:22:17.658
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2022-04-04 15:22:17.658
+!MESSAGE D:\00_STM32\STM32F103\stm32f103_fw_Test overlaps the location of another project: 'stm32f103_fw_Test'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2022-04-04 15:22:17.659
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-04 15:22:41.819
+!MESSAGE Indexed 'stm32f103_fw_Test' (44 sources, 132 headers) in 2.88 sec: 9,415 declarations; 37,100 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0.4%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-04 15:23:03.657
+!MESSAGE Indexed 'stm32f103_fw' (44 sources, 132 headers) in 2.99 sec: 9,578 declarations; 38,262 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0.39%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-04 15:30:29.720
+!MESSAGE Indexed 'stm32f103_fw_Test' (44 sources, 132 headers) in 2.05 sec: 9,415 declarations; 37,100 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0.4%)
+!SESSION 2022-04-04 16:09:26.659 -----------------------------------------------
+eclipse.buildId=Version 1.9.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-04-04 16:10:40.628
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-04-04 16:10:40.705
+!MESSAGE Log4j initialized with config file D:\00_STM32\STM32F103\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-04-04 16:10:49.506
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.core.resources 4 77 2022-04-04 16:11:24.183
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2022-04-04 16:11:24.183
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2022-04-04 16:11:24.183
+!MESSAGE D:\00_STM32\STM32F103\stm32f103_fw_Test overlaps the location of another project: 'stm32f103_fw_Test'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2022-04-04 16:11:24.184
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-04 16:11:56.841
+!MESSAGE Indexed 'stm32f103_fw' (44 sources, 132 headers) in 5.27 sec: 9,575 declarations; 38,257 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0.39%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-04 16:40:55.216
+!MESSAGE Indexed 'stm32f103_fw' (44 sources, 132 headers) in 2.15 sec: 9,578 declarations; 38,262 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0.39%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-04 16:41:15.715
+!MESSAGE Indexed 'stm32f103_boot' (43 sources, 131 headers) in 2.23 sec: 9,134 declarations; 34,559 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0.43%)

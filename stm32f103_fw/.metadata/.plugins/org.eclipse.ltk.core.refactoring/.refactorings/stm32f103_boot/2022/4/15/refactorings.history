@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;stm32f103_boot/src/lib/cube_f103/cube_f103.ioc&apos; to &apos;cube_f103_boot.ioc&apos;" description="Rename resource &apos;cube_f103.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/lib/cube_f103/cube_f103.ioc" name="cube_f103_boot.ioc" stamp="1649127771580" updateReferences="true"/>
+</session>

@@ -1,14 +1,21 @@
-18:14:13 **** Incremental Build of configuration Debug for project stm32f103_fw ****
+16:47:22 **** Incremental Build of configuration Debug for project stm32f103_boot ****
 make -j8 all 
-arm-none-eabi-gcc "../src/hw/driver/flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32F103xB -c -I"D:/00_STM32/STM32F103/stm32f103_fw/src" -I"D:/00_STM32/STM32F103/stm32f103_fw/src/common/hw/Include" -I"D:/00_STM32/STM32F103/stm32f103_fw/src/ap" -I"D:/00_STM32/STM32F103/stm32f103_fw/src/bsp" -I"D:/00_STM32/STM32F103/stm32f103_fw/src/common" -I"D:/00_STM32/STM32F103/stm32f103_fw/src/common/core" -I"D:/00_STM32/STM32F103/stm32f103_fw/src/hw" -I"D:/00_STM32/STM32F103/stm32f103_fw/src/lib" -I"D:/00_STM32/STM32F103/stm32f103_fw/src/lib/cube_f103/Drivers/CMSIS/Device/ST/STM32F1xx/Include" -I"D:/00_STM32/STM32F103/stm32f103_fw/src/lib/cube_f103/Drivers/CMSIS/Include" -I"D:/00_STM32/STM32F103/stm32f103_fw/src/lib/cube_f103/Drivers/STM32F1xx_HAL_Driver/Inc" -I"D:/00_STM32/STM32F103/stm32f103_fw/src/lib/cube_f103/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc" -I"D:/00_STM32/STM32F103/stm32f103_fw/src/lib/cube_f103/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"D:/00_STM32/STM32F103/stm32f103_fw/src/lib/cube_f103/USB_DEVICE/App" -I"D:/00_STM32/STM32F103/stm32f103_fw/src/lib/cube_f103/USB_DEVICE/Target" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"src/hw/driver/flash.d" -MT"src/hw/driver/flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "src/hw/driver/flash.o"
-arm-none-eabi-gcc -o "stm32f103_fw.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\00_STM32\STM32F103\stm32f103_fw\src\bsp\ldscript\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f103_fw.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: stm32f103_fw.elf
+arm-none-eabi-gcc "../src/hw/driver/flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32F103xB -c -I"D:/00_STM32/STM32F103/stm32f103_boot/src" -I"D:/00_STM32/STM32F103/stm32f103_boot/src/common/hw/Include" -I"D:/00_STM32/STM32F103/stm32f103_boot/src/ap" -I"D:/00_STM32/STM32F103/stm32f103_boot/src/bsp" -I"D:/00_STM32/STM32F103/stm32f103_boot/src/common" -I"D:/00_STM32/STM32F103/stm32f103_boot/src/common/core" -I"D:/00_STM32/STM32F103/stm32f103_boot/src/hw" -I"D:/00_STM32/STM32F103/stm32f103_boot/src/lib" -I"D:/00_STM32/STM32F103/stm32f103_boot/src/lib/cube_f103/Drivers/CMSIS/Device/ST/STM32F1xx/Include" -I"D:/00_STM32/STM32F103/stm32f103_boot/src/lib/cube_f103/Drivers/CMSIS/Include" -I"D:/00_STM32/STM32F103/stm32f103_boot/src/lib/cube_f103/Drivers/STM32F1xx_HAL_Driver/Inc" -I"D:/00_STM32/STM32F103/stm32f103_boot/src/lib/cube_f103/Middlewares/ST/STM32_USB_Device_Library/Class/DFU/Inc" -I"D:/00_STM32/STM32F103/stm32f103_boot/src/lib/cube_f103/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"D:/00_STM32/STM32F103/stm32f103_boot/src/lib/cube_f103/USB_DEVICE/App" -I"D:/00_STM32/STM32F103/stm32f103_boot/src/lib/cube_f103/USB_DEVICE/Target" -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"src/hw/driver/flash.d" -MT"src/hw/driver/flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "src/hw/driver/flash.o"
+../src/hw/driver/flash.c: In function 'flashErase':
+../src/hw/driver/flash.c:66:33: warning: array subscript 65535 is above array bounds of 'flash_tbl_t[64]' [-Warray-bounds]
+   66 |     init.PageAddress = flash_tbl[start_sector_num].addr;
+      |                        ~~~~~~~~~^~~~~~~~~~~~~~~~~~
+../src/hw/driver/flash.c:21:20: note: while referencing 'flash_tbl'
+   21 | static flash_tbl_t flash_tbl[FLASH_SECTOR_MAX];
+      |                    ^~~~~~~~~
+arm-none-eabi-gcc -o "stm32f103_boot.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\00_STM32\STM32F103\stm32f103_boot\src\bsp\ldscript\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f103_boot.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32f103_boot.elf
  
-arm-none-eabi-size   stm32f103_fw.elf 
-arm-none-eabi-objdump -h -S  stm32f103_fw.elf  > "stm32f103_fw.list"
+arm-none-eabi-size   stm32f103_boot.elf 
+arm-none-eabi-objdump -h -S  stm32f103_boot.elf  > "stm32f103_boot.list"
    text	   data	    bss	    dec	    hex	filename
-  39084	    424	   6088	  45596	   b21c	stm32f103_fw.elf
+  15416	    236	   5416	  21068	   524c	stm32f103_boot.elf
 Finished building: default.size.stdout
  
-Finished building: stm32f103_fw.list
+Finished building: stm32f103_boot.list
  

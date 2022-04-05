@@ -1,0 +1,94 @@
+!SESSION 2022-04-04 16:52:51.492 -----------------------------------------------
+eclipse.buildId=Version 1.9.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-04-04 16:53:07.468
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-04-04 16:53:07.585
+!MESSAGE Log4j initialized with config file D:\00_STM32\STM32F103\새 폴더\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-04-04 16:53:12.270
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-04 16:53:41.108
+!MESSAGE Indexed 'stm32f103_boot' (43 sources, 70 headers) in 4.95 sec: 6,798 declarations; 24,719 references; 35 unresolved inclusions; 296 syntax errors; 6,110 unresolved names (16%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-04 16:54:01.409
+!MESSAGE Indexed 'stm32f103_fw (1)' (44 sources, 71 headers) in 3.3 sec: 7,181 declarations; 27,508 references; 35 unresolved inclusions; 307 syntax errors; 6,432 unresolved names (16%)
+!SESSION 2022-04-04 16:56:48.046 -----------------------------------------------
+eclipse.buildId=Version 1.9.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-04-04 16:57:13.016
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-04-04 16:57:13.090
+!MESSAGE Log4j initialized with config file D:\00_STM32\STM32F103\TEST\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-04-04 16:57:19.809
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.core.resources 4 77 2022-04-04 16:57:44.218
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2022-04-04 16:57:44.218
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2022-04-04 16:57:44.218
+!MESSAGE D:\00_STM32\STM32F103\TEST\stm32f103_fw (1) overlaps the location of another project: 'stm32f103_fw (1)'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2022-04-04 16:57:44.219
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2022-04-04 16:58:05.038
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2022-04-04 16:58:05.038
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2022-04-04 16:58:05.038
+!MESSAGE D:\00_STM32\STM32F103\TEST\stm32f103_fw (1) overlaps the location of another project: 'stm32f103_fw (1)'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2022-04-04 16:58:05.040
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2022-04-04 16:58:38.897
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2022-04-04 16:58:38.897
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2022-04-04 16:58:38.897
+!MESSAGE D:\00_STM32\STM32F103\TEST\stm32f103_fw (1) overlaps the location of another project: 'stm32f103_fw (1)'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2022-04-04 16:58:38.898
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2022-04-04 16:58:57.626
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2022-04-04 16:58:57.626
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2022-04-04 16:58:57.626
+!MESSAGE D:\00_STM32\STM32F103\TEST\stm32f103_fw (1) overlaps the location of another project: 'stm32f103_fw (1)'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2022-04-04 16:58:57.627
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-04 16:59:42.015
+!MESSAGE Indexed 'stm32f103_fw' (44 sources, 132 headers) in 4.16 sec: 9,411 declarations; 37,097 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0.4%)
+!SESSION 2022-04-04 17:17:49.214 -----------------------------------------------
+eclipse.buildId=Version 1.9.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-04-04 17:17:57.967
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-04-04 17:17:58.037
+!MESSAGE Log4j initialized with config file D:\00_STM32\STM32F103\TEST\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-04-04 17:18:03.660
+!MESSAGE Started RMI Server, listening on port 41337

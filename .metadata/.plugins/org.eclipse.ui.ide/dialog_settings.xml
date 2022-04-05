@@ -7,10 +7,16 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="D:\00_STM32\STM32F103\stm32f103_boot"/>
 			<item value="D:\00_STM32\STM32F103\stm32f103_fw"/>
+			<item value="D:\00_STM32\STM32F103\stm32f103_fw_기초12"/>
+			<item value="D:\00_STM32\STM32F103\stm32f103_fw_Test"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
 		</list>
+	</section>
+	<section name="org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea">
+		<item key="OUTSIDE_LOCATION" value="D:\00_STM32\STM32F103"/>
 	</section>
 </section>
